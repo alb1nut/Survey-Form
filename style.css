@@ -105,6 +105,8 @@ button:hover{
     width: 90vw;
     height: 2rem;
     border: solid black ;
+    background-color: white;
+    
 }
 
 button:hover{
