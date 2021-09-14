@@ -4,8 +4,20 @@ body{
     background-color: rgb(170, 170, 170);
 }
 
-h1{
+#title{
     font-size: 3.5rem;
+}
+
+#name{
+    background-color: white;
+}
+
+#email{
+    background-color: white;
+}
+
+#survey-form{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .container{
@@ -49,7 +61,7 @@ input{
     width: 4vw;
 }
 
-.option ,button ,input {
+.option ,#submit ,input {
     width: 50vw;
     height: 2.5rem;
     border: solid black ;
@@ -70,7 +82,7 @@ input{
 
 }
 
-button:hover{
+#submit:hover{
     background-color: #014712;
     color: white;
 }
@@ -83,7 +95,7 @@ button:hover{
      margin: 0;
    } 
 
-   h1{
+ #description{
        font-size: 3rem;
    }
 
@@ -106,7 +118,7 @@ button:hover{
     width: 8vw;
 }
 
-.option ,button ,input {
+.option ,#submit ,input {
     width: 90vw;
     height: 2rem;
     border: solid black ;
@@ -115,7 +127,7 @@ button:hover{
 }
 
 
-button:hover{
+#submit:hover{
     background-color: #014712;
     color: white;
 }
