@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Header from './Header'
 import Content from './Content';
 import Footer from './Footer';
+import AddList from './AddList'
 const  App = () => {
 
   const [items, setItems] = useState([
@@ -24,6 +25,8 @@ const  App = () => {
     },
   ]);
 
+  const [ addItem , setAddItem] = useState('')
+
   const handleCheck = (id) => {
     const itemList = items.map((item) =>
       item.id === id ? { ...item, checked: !item.checked } : item
@@ -37,10 +40,21 @@ const  App = () => {
     setItems(itemList);
     localStorage.setItems('shoppinglist' , JSON.stringify(itemList))
   };
+
+  const handleAdd = (e)=>{
+    e.preventDefault()
+    console.log("Submited");
+    // console.log(setAddItem(e.target.value));
+  }
   
   return (
     <div className="App">
       <Header/>
+      <AddList 
+       addItem={addItem} 
+       setAddItem={setAddItem}
+       handleAdd={handleAdd}
+        />
       <Content items={items}  handleCheck={handleCheck} handleDelete={handleDelete} />
       <Footer  length={items.length}/>
 

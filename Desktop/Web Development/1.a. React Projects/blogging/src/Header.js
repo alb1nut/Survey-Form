@@ -1,19 +1,19 @@
-
 //Components
 
-const  Header = () => {
+import { Flex, Box, Heading, Center } from "@chakra-ui/react";
 
-    // const headerStyle={
-    //     backgroundColor : 'mediumblue',
-    //     color:'#fff',
-    //     padding:'20px'
-    // }
-  
+const Header = () => {
   return (
     <header>
-       <h1>Groceries List</h1>
+      <Flex>
+        <Box bg="green.900" w="100vw" p={2} color="white">
+          <Center>
+            <Heading>Groceries List</Heading>
+          </Center>
+        </Box>
+      </Flex>
     </header>
   );
-}
+};
 
 export default Header;

@@ -3,7 +3,7 @@ const  ListItem = ({ item, handleCheck , handleDelete }) => {
 
 
   return (
-<div className="card" key={item.id}>
+<div className="card">
                 <input checked={item.checked} type="checkbox" onChange={() => handleCheck(item.id)} />
                 <label 
                 style={item.checked ? {textDecoration : '5px line-through black' } : null}

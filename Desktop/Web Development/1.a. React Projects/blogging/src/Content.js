@@ -1,28 +1,30 @@
 import "./index.css";
 import ListItem from "./ListItem";
 
-const Content = ({ items, handleCheck, handleDelete}) => {
-
-
-
-
+const Content = ({ items, handleCheck, handleDelete }) => {
   return (
     <main className="App">
       {items.length > 0 ? (
         <div>
-            {items.map((item) => (
-              <ListItem  item={item} handleCheck={handleDelete} handleDelete={handleDelete}/>
-              
-            ))}
-          </div>
+          {items.map((item) => (
+            <ListItem
+              key={item.id}
+              item={item}
+              handleCheck={handleDelete}
+              handleDelete={handleDelete}
+            />
+          ))}
+        </div>
       ) : (
-        <div style={{
-            backgroundColor :'rgb(10, 77, 19)',
-            padding: ' 40px 150px',
-            borderRadius: '5px',
-            color: '#fff',
-            margin: 'auto',
-        }}>
+        <div
+          style={{
+            backgroundColor: "rgb(10, 77, 19)",
+            padding: " 40px 150px",
+            borderRadius: "5px",
+            color: "#fff",
+            margin: "auto",
+          }}
+        >
           <h2>No Item on List</h2>
         </div>
       )}

@@ -25,14 +25,14 @@ html{
   height: calc(100vh - 2px);
 }
 
-header , footer{
+ /* footer{
   background-color: rgb(10, 77, 19);
   width: 100vw;
   color:#fff;
   text-align: center;
   padding: 10px;
   position: sticky;
-}
+} */
 
 
 
@@ -71,3 +71,39 @@ code {
   font-size: 24px;
  
 }
+
+/* .addInput{
+  width: 90vw;
+  padding: 20px 15px;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 1rem;
+} */
+
+/* .addInput:focus{
+  outline: 0;
+} */
+
+.addBtn{
+  padding: 20px 15px;
+  font-size: 20px;
+  border: 0;
+  border-radius: 5px;
+  background-color: rgb(10, 77, 19);
+  color: #fff;
+  cursor: pointer;
+}
+
+.addBtn:hover{
+  background-color: rgba(10, 77, 19, 0.8);
+
+}
+
+/* 
+@media (max-width :800px){
+  .addInput{
+    width: 70vw;
+    padding: 15px 10px;
+  }
+} */
