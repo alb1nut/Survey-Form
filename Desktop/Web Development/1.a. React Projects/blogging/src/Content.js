@@ -1,60 +1,27 @@
-import { useState } from "react";
 import "./index.css";
+import ListItem from "./ListItem";
 
-const Content = () => {
-  const [items, setItems] = useState([
-    {
-      id: 1,
-      checked: false,
-      item: "Fish",
-    },
-    {
-      id: 2,
-      checked: false,
-      item: "Meat",
-    },
-    {
-      id: 3,
-      checked: false,
-      item: "Milk",
-    },
-  ]);
+const Content = ({ items, handleCheck, handleDelete}) => {
 
-  const handleCheck = (id) => {
-    const itemList = items.map((item) =>
-      item.id === id ? { ...item, checked: !item.checked } : item
-    );
-    setItems(itemList);
-    localStorage.setItems("shoppinglist", JSON.stringify(itemList));
-  };
 
-  const handleDelete = (id) => {
-    const itemList = items.filter((item) => item.id !== id);
-    setItems(itemList);
-    localStorage.setItems('shoppinglist' , JSON.stringify(itemList))
-  };
+
 
   return (
     <main className="App">
-      {items.length > 0 ? (git add .
+      {items.length > 0 ? (
         <div>
-          {items.map((item) => (
-            <div className="card" key={item.id}>
-              <input checked={item.checked} type="checkbox" onChange={() => handleCheck(item.id)} />
-              <label 
-              style={item.checked ? {textDecoration : '5px line-through black' } : null}
-         
-             onDoubleClick={() =>handleCheck(item.id)}>{item.item}</label>
-              <button onClick={() => handleDelete(item.id)}>Delete</button>
-            </div> 
-          ))}
-        </div>
+            {items.map((item) => (
+              <ListItem  item={item} handleCheck={handleDelete} handleDelete={handleDelete}/>
+              
+            ))}
+          </div>
       ) : (
         <div style={{
             backgroundColor :'rgb(10, 77, 19)',
             padding: ' 40px 150px',
             borderRadius: '5px',
             color: '#fff',
+            margin: 'auto',
         }}>
           <h2>No Item on List</h2>
         </div>

@@ -2,14 +2,21 @@
 
 //Components
 
-const  Footer = () => {
+const  Footer = ({ length }) => {
     const today = new Date();  
 
   return (
 
     <footer>
+      <div style={{
+        fontSize :'40px',
+        fontWeight: 'Bold',
 
-      <p>Copyright &copy; {today.getFullYear()}</p>
+      }}>
+     { length } {length === 1 ? 'item' : 'items'} on list  
+
+      </div>
+     <p>Copyright &copy; {today.getFullYear()}</p>
 
     </footer>
   );

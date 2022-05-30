@@ -20,7 +20,7 @@ html{
 .App{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: calc(100vh - 2px);
 }
@@ -38,7 +38,7 @@ header , footer{
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
 }
 
 
@@ -54,6 +54,7 @@ code {
   color: #fff;
   border-radius: 10px;
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .card input{
@@ -68,4 +69,5 @@ code {
   border: 0;
   cursor: 0;
   font-size: 24px;
+ 
 }
