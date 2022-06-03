@@ -1,4 +1,4 @@
-body {
+/* body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
   sans-serif;
@@ -11,8 +11,8 @@ body {
   margin: 0;
   padding:0;
  box-sizing: border-box;
-}
-
+} */
+/* 
 html{
  font-size: 22px;
 }
@@ -36,13 +36,13 @@ html{
 
 
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
-}
+}  */
 
 
-.card{
+/* .card{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -55,9 +55,9 @@ code {
   border-radius: 10px;
   margin-bottom: 10px;
   margin-top: 10px;
-}
+} */
 
-.card input{
+/* .card input{
   width: 50px;
   height: 30px;
   padding: 80px;
@@ -70,7 +70,7 @@ code {
   cursor: 0;
   font-size: 24px;
  
-}
+} */
 
 /* .addInput{
   width: 90vw;
@@ -85,7 +85,7 @@ code {
   outline: 0;
 } */
 
-.addBtn{
+/* .addBtn{
   padding: 20px 15px;
   font-size: 20px;
   border: 0;
@@ -93,12 +93,12 @@ code {
   background-color: rgb(10, 77, 19);
   color: #fff;
   cursor: pointer;
-}
+} */
 
-.addBtn:hover{
+/* .addBtn:hover{
   background-color: rgba(10, 77, 19, 0.8);
 
-}
+} */
 
 /* 
 @media (max-width :800px){

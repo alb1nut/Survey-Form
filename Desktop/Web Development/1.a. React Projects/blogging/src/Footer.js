@@ -1,8 +1,6 @@
 //Components
 import {
   Box,
-  Stack,
-  HStack,
   VStack,
   Text,
   Flex,
@@ -14,7 +12,11 @@ const Footer = ({ length }) => {
   return (
     <footer>
       <Flex>
-        <Box bg="green.900" w="100vw"  color="white">
+        <Box 
+        position='fixed'
+        bottom={0}
+        // left={0}
+        bg="green.900" w="100vw" color="white">
           <Center>
             <VStack>
               <Box>

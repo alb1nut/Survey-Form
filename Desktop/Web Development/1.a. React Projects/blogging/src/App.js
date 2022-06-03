@@ -1,65 +1,75 @@
 // import './App.css';
-import { useState } from 'react';
+import { useState } from "react";
 //Components
-import Header from './Header'
-import Content from './Content';
-import Footer from './Footer';
-import AddList from './AddList'
-const  App = () => {
+import Header from "./Header";
+import Content from "./Content";
+import Footer from "./Footer";
+import AddList from "./AddList";
+import Search from "./Search";
+const App = () => {
+  const [items, setItems] = useState(JSON.parse(localStorage.getItem('shoppinglist')));
 
-  const [items, setItems] = useState([
-    {
-      id: 1,
-      checked: false,
-      item: "Fish",
-    },
-    {
-      id: 2,
-      checked: false,
-      item: "Meat",
-    },
-    {
-      id: 3,
-      checked: false,
-      item: "Milk",
-    },
-  ]);
+  const [newItem, setNewItem] = useState("");
+  const [search ,setSearch] = useState('')
 
-  const [ addItem , setAddItem] = useState('')
+  
+
+  const setAndSaveItems = (newItems) =>{
+    setItems(newItems);
+    localStorage.setItem("shoppinglist", JSON.stringify(newItems));
+  }
+
+  const addList = (item) => {
+    const id = items.length ? items[items.length - 1].id + 1 : 1;
+    const myNewItem = { id, checked: false, item };
+    const listItems = [...items, myNewItem];
+    setAndSaveItems(listItems)
+  };
 
   const handleCheck = (id) => {
-    const itemList = items.map((item) =>
+    const listItems = items.map((item) =>
       item.id === id ? { ...item, checked: !item.checked } : item
     );
-    setItems(itemList);
-    localStorage.setItems("shoppinglist", JSON.stringify(itemList));
+    setAndSaveItems(listItems)
   };
 
   const handleDelete = (id) => {
-    const itemList = items.filter((item) => item.id !== id);
-    setItems(itemList);
-    localStorage.setItems('shoppinglist' , JSON.stringify(itemList))
+    const listItems = items.filter((item) => item.id !== id);
+    setAndSaveItems(listItems)
   };
 
-  const handleAdd = (e)=>{
-    e.preventDefault()
-    console.log("Submited");
-    // console.log(setAddItem(e.target.value));
-  }
-  
+  const handleAdd = (e) => {
+    e.preventDefault();
+    if (!newItem) return;
+     addList(newItem)
+    //  e.target.reset();
+     setNewItem('')
+  };
+
+
+
   return (
     <div className="App">
-      <Header/>
-      <AddList 
-       addItem={addItem} 
-       setAddItem={setAddItem}
-       handleAdd={handleAdd}
-        />
-      <Content items={items}  handleCheck={handleCheck} handleDelete={handleDelete} />
-      <Footer  length={items.length}/>
+      <Header />
+      <AddList
+        addItem={newItem}
+        setAddItem={setNewItem}
+        handleAdd={handleAdd}
+      />
+      <Search  
+        search ={search}
+        setSearch= {setSearch}
+        // handleSearch= {handleSearch}
 
+      />
+      <Content
+        items={items.filter((item) => ((item.item).toLowerCase()).includes(search.toLowerCase()))}
+        handleCheck={handleCheck}
+        handleDelete={handleDelete}
+      />
+      <Footer length={items.length} />
     </div>
   );
-}
+};
 
 export default App;

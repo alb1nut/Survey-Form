@@ -1,34 +1,49 @@
 import "./index.css";
 import ListItem from "./ListItem";
 
+import { Box, Center, Text, useMediaQuery } from "@chakra-ui/react";
+
 const Content = ({ items, handleCheck, handleDelete }) => {
+  const [isLargerThan600] = useMediaQuery("(max-width: 600px)");
+
   return (
-    <main className="App">
+    <Box
+    
+      height='70vh'
+    mr={isLargerThan600 && "1.0rem"}>
       {items.length > 0 ? (
-        <div>
-          {items.map((item) => (
-            <ListItem
-              key={item.id}
-              item={item}
-              handleCheck={handleDelete}
-              handleDelete={handleDelete}
-            />
-          ))}
-        </div>
+        // <Box
+
+        // >
+        items.map((item) => (
+          <ListItem
+            key={item.id}
+            item={item}
+            handleCheck={handleCheck}
+            handleDelete={handleDelete}
+          />
+        ))
       ) : (
-        <div
-          style={{
-            backgroundColor: "rgb(10, 77, 19)",
-            padding: " 40px 150px",
-            borderRadius: "5px",
-            color: "#fff",
-            margin: "auto",
-          }}
-        >
-          <h2>No Item on List</h2>
-        </div>
+        <Center>
+        <Box
+        borderRadius="0.375rem"
+            bg="green.900"
+            display="flex"
+            width="70vw"
+            p={4}
+            m={2}
+            color="white"
+          >
+            <Text
+            // textAlign='center'
+           
+            color="whiteAlpha.900" 
+            fontSize={ isLargerThan600 ? 'md' : 'xl'}
+            >No Item on List</Text>
+          </Box>
+        </Center>
       )}
-    </main>
+    </Box>
   );
 };
 
